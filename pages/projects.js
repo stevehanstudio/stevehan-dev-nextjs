@@ -24,6 +24,7 @@ import {
 	useColorMode,
 } from '@chakra-ui/react';
 import { GrGithub } from 'react-icons/gr'
+import internetIcon from '../assets/internetIcon';
 import { useMediaQuery } from '@chakra-ui/media-query';
 import Layout from '../components/Layout';
 
@@ -75,11 +76,10 @@ export default function Project({ projects }) {
 									Details
 								</Button>
 								<Link href={project.data.github} isExternal>
-									<IconButton
-										as={GrGithub}
-										rounded='full'
-										p={3}
-									/>
+									<IconButton as={GrGithub} rounded='full' p={3} />
+								</Link>
+								<Link href={project.data.website} isExternal>
+									<IconButton as={internetIcon} rounded='full' p={3} />
 								</Link>
 							</Flex>
 							<Divider my={3} />

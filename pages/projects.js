@@ -14,12 +14,16 @@ import {
 	Text,
 	Image,
 	Heading,
+	Icon,
+	IconButton,
+	ExternalLinkIcon,
 	Link,
 	Divider,
 	UnorderedList,
 	ListItem,
 	useColorMode,
 } from '@chakra-ui/react';
+import { GrGithub } from 'react-icons/gr'
 import { useMediaQuery } from '@chakra-ui/media-query';
 import Layout from '../components/Layout';
 
@@ -66,16 +70,33 @@ export default function Project({ projects }) {
 								</Link>
 							</NextLink>
 							<Text>{project.data.subtitle}</Text>
-							<Button variant='primary' my={4}>
-								Details
-							</Button>
-							<Divider my={3}/>
+							<Flex my={4}>
+								<Button variant='primary' mr={4}>
+									Details
+								</Button>
+								<Link href={project.data.github} isExternal>
+									<IconButton
+										as={GrGithub}
+										rounded='full'
+										p={3}
+									/>
+								</Link>
+							</Flex>
+							<Divider my={3} />
 							{project.data.skills.map((skill, index) => {
 								return (
-									<Badge key={index} rounded='full' px={4} py={2} mr={2} mt={2} mb={1}>
+									<Badge
+										key={index}
+										rounded='full'
+										px={4}
+										py={2}
+										mr={2}
+										mt={2}
+										mb={1}
+									>
 										{skill}
 									</Badge>
-								)
+								);
 							})}
 						</Box>
 					</Container>

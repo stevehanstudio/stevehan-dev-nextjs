@@ -1,0 +1,48 @@
+---
+title: Steve Han Photography
+subtitle: My photography portfolio site built using Gatsby, React, Cloudinary
+slug: steve-han-photography
+image: ./images/stevehanphotography.jpg
+screenshot: ./images/stevehanphotography-screenshot.png
+date: "2020-09-25"
+author: Steve Han
+skills: ["React","Gatsby","Javascript","GraphQL","Styled Components"]
+website: https://www.stevehanphotography.com
+github: https://github.com/stevehanstudio/stevehanphotography
+---
+
+import { Link } from "next/link"
+
+My portfolio website made with Gatsby/React, Styled Component, MDX, and Cloudinary.
+
+<blockquote>
+  I'm baby tumblr fanny pack tousled seitan. Man bun shaman yr, bushwick fam
+  hammock williamsburg kombucha keytar VHS. Chambray street art authentic,
+</blockquote>
+
+<blockquote display="info">
+  I'm baby tumblr fanny pack tousled seitan. Man bun shaman yr, bushwick fam
+  hammock williamsburg kombucha keytar VHS. Chambray street art authentic,
+</blockquote>
+
+```jsx
+import React from "react"
+
+const Counter = () => {
+  const [count, setCount] = React.useState(0)
+  return (
+    <section className="counter">
+      <h4>show some love to MDX</h4>
+      <h4>likes {count}</h4>
+      <button className="btn btn-danger" onClick={() => setCount(count + 1)}>
+        i like mdx
+      </button>
+    </section>
+  )
+}
+export default Counter
+```
+
+<Link to="/posts" className="btn center-btn">
+  all posts
+</Link>

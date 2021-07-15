@@ -10,10 +10,12 @@ import {
 	Container,
 	Box,
 	Button,
+	Badge,
 	Text,
 	Image,
 	Heading,
 	Link,
+	Divider,
 	UnorderedList,
 	ListItem,
 	useColorMode,
@@ -24,40 +26,58 @@ import Layout from '../components/Layout';
 export default function Project({ projects }) {
 	const [isNotSmallerScreen] = useMediaQuery();
 	const { colorMode } = useColorMode()
-	console.log(projects);
 	return (
 		<Layout>
 			<Heading as='h1' mb={4}>
 				Projects
 			</Heading>
 			<SimpleGrid columns={{ sm: 2, md: 3, lg: 3, xl: 3 }} spacing='40px'>
-				{projects.map(project => (
+				{projects.reverse().map(project => (
 					<Container
 						key={project.filePath}
 						variant='projectCard'
-						m={0.5}
 						minW='250px'
-						p={6}
 						rounded={6}
+						overflow='hidden'
+						p={0}
 					>
-						{console.log('project.filePath=', project.filePath)}
-						{console.log('project.data.image=', project.data.image)}
 						<Image
-							src={`/projects/${project.data.image}`}
-							alt={project.data.title}
+							width='100vw'
+							src={`${project.data.image}`}
+							alt={`${project.data.title} Cover`}
 						/>
-						<NextLink
-							as={`/projects/${project.filePath.replace(/\.mdx?$/, '')}`}
-							href={`/projects/[slug]`}
-						>
-							<Link>
-								<Heading as='h2'>{project.data.title}</Heading>-{' '}
-								<Text>{project.data.subtitle}</Text>
-							</Link>
-						</NextLink>
-						<Button variant='primary' mt={8}>
-							Details
-						</Button>
+						<Box p={4}>
+							<NextLink
+								as={`/projects/${project.filePath.replace(
+									/\.mdx?$/,
+									''
+								)}`}
+								href={`/projects/[slug]`}
+							>
+								<Link>
+									<Heading
+										as='h2'
+										fontSize='1.8rem'
+										fontWeight={600}
+										pb={4}
+									>
+										{project.data.title}
+									</Heading>
+								</Link>
+							</NextLink>
+							<Text>{project.data.subtitle}</Text>
+							<Button variant='primary' my={4}>
+								Details
+							</Button>
+							<Divider my={3}/>
+							{project.data.skills.map((skill, index) => {
+								return (
+									<Badge key={index} rounded='full' px={4} py={2} mr={2} mt={2} mb={1}>
+										{skill}
+									</Badge>
+								)
+							})}
+						</Box>
 					</Container>
 				))}
 			</SimpleGrid>

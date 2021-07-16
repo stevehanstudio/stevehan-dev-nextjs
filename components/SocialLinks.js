@@ -1,56 +1,66 @@
 import React from "react"
 import NextLink from 'next/link';
-import {Button} from '@chakra-ui/react'
+import {Button, IconButton, Link} from '@chakra-ui/react'
 import { AiFillHome, AiFillLinkedin } from 'react-icons/ai';
 import { FaInfoCircle } from 'react-icons/fa'
 import { GrGithub } from 'react-icons/gr';
 import { SiCodesandbox } from 'react-icons/si';
+import { ResumeIcon } from '../assets/resumeIcon'
 
 export const navLinks = [
 	{
 		title: 'Home',
-		icon: <AiFillHome />,
+		icon: AiFillHome,
 		pageUrl: '/',
 	},
 	{
 		title: 'About',
-		icon: <FaInfoCircle />,
+		icon: FaInfoCircle,
 		pageUrl: '/about',
 	},
-];
+]
 
 export const socialLinks = [
 	{
 		title: 'Linkedin',
 		//    icon: <FaLinkedin />,
-		icon: <AiFillLinkedin />,
+		icon: AiFillLinkedin,
 		url: 'https://linkedin.com/in/stevehanphoto',
 	},
 	{
 		title: 'Github',
 		//icon: <FaGithubSquare />,
-		icon: <GrGithub />,
+		icon: GrGithub,
 		url: 'https://github.com/stevehanstudio',
 	},
 	{
 		title: 'Codesandbox',
 		//icon: <FaGithubSquare />,
-		icon: <SiCodesandbox />,
+		icon: SiCodesandbox,
 		url: 'https://codesandbox.com/stevehanstudio',
-	},
-	/*  {
-    title: "Resume",
-    icon: <ResumeIcon />,
-    url: "./SteveHanDevResume.pdf"
-  },*/
-];
+	}
+]
+
+export const resumeIcon = {
+	title: "Resume",
+	icon: ResumeIcon,
+	url: "/resume"
+}
+
 
 const SocialLinks = () => {
-  return (
+	return (
 		<>
-			<NextLink href='/resume'>Resume</NextLink>
+			{socialLinks.map(socialLink => (
+				<Link key={socialLink.title} href={socialLink.url} isExternal>
+					<IconButton as={socialLink.icon} rounded='full' p={3} />
+				</Link>
+			))}
+			<NextLink href={resumeIcon.url}>
+				<IconButton as={resumeIcon.icon} rounded='full' p={3} />
+			</NextLink>
 		</>
-  );
+	);
 }
 
 export default SocialLinks

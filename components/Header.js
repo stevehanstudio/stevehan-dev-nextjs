@@ -3,6 +3,7 @@ import {
   Box,
   VStack,
   Text,
+	Tooltip,
 	Divider
 } from '@chakra-ui/react'
 import Navbar from './Navbar';
@@ -12,7 +13,9 @@ const Header = () => {
   return (
 		<VStack>
 			<Box pos='absolute' top='0.7rem' right='0.8rem'>
-				<DarkModeSwitch />
+			  <Tooltip hasArrow placement='bottom-start' label='Light/Dark Mode Switch'>
+					<DarkModeSwitch />
+				</Tooltip>
 			</Box>
 			<Text
 				fontSize='8xl'

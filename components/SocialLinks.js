@@ -1,6 +1,6 @@
 import React from "react"
 import NextLink from 'next/link';
-import {Button, IconButton, Link} from '@chakra-ui/react'
+import {Button, IconButton, Link, Tooltip} from '@chakra-ui/react'
 import { AiFillHome, AiFillLinkedin } from 'react-icons/ai';
 import { FaInfoCircle } from 'react-icons/fa'
 import { GrGithub } from 'react-icons/gr';
@@ -51,16 +51,39 @@ const SocialLinks = () => {
 	return (
 		<>
 			{socialLinks.map(socialLink => (
-				<Link key={socialLink.title} href={socialLink.url} isExternal>
-					<IconButton as={socialLink.icon} rounded='full' mr={2} p={3} />
-				</Link>
+				<Tooltip
+					hasArrow
+					key={socialLink.title}
+					placement='bottom-end'
+					label={socialLink.title}
+				>
+					<Link href={socialLink.url} isExternal>
+						<IconButton
+							as={socialLink.icon}
+							rounded='full'
+							mr={2}
+							p={3}
+						/>
+					</Link>
+				</Tooltip>
 			))}
-			<NextLink href={resumeIcon.url} passHref>
-				<IconButton as={resumeIcon.icon} rounded='sm' ml={5} p={2} />
-			</NextLink>
+			<Tooltip
+				hasArrow
+				placement='bottom-start'
+				arrowPadding={16}
+				arrowSize={16}
+				offset={8}
+				label={resumeIcon.title}
+			>
+				<NextLink href={resumeIcon.url} passHref>
+					<IconButton as={resumeIcon.icon} rounded='sm' ml={5} p={2} />
+				</NextLink>
+			</Tooltip>
 		</>
 	);
 }
-
+{/* <Tooltip hasArrow label='Search places' bg='gray.300' color='black'>
+	<SearchIcon />
+</Tooltip>; */}
 export default SocialLinks
 

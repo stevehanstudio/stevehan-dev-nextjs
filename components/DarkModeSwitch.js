@@ -8,6 +8,7 @@ const DarkModeSwitch = () => {
         light: 'black',
         dark: 'white'
     }
+
     return (
         <IconButton
             aria-label='Toggle dark mode'
@@ -17,7 +18,7 @@ const DarkModeSwitch = () => {
             rounded='full'
             p={3}
         />
-	)
+    )
 }
 
 export default DarkModeSwitch

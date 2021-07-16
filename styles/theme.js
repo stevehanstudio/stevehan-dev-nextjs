@@ -11,6 +11,14 @@ export const customTheme = extendTheme({
 		warning: '#FFC75F',
 		danger: '#C34A36',
 	},
+	fonts: {
+		heading: '"Roboto", sans-serif',
+		body:  '"Roboto", sans-serif',
+		mono: '"Space Mono", monospace',
+	},
+	fontSizes: {
+		"6xl": "6rem"
+	},
 	components: {
 		Button,
     Box,

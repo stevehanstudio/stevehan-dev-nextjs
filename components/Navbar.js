@@ -1,7 +1,7 @@
 import { useColorMode, Button, Flex, Box } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import DarkModeSwitch from './DarkModeSwitch';
+import SocialLinks from './SocialLinks'
 
 const Navbar = () => {
 	const { colorMode } = useColorMode();
@@ -24,7 +24,6 @@ const Navbar = () => {
 			my={8}
 			mx='auto'
 		>
-			<DarkModeSwitch />
 			<Box>
 				<NextLink href='/' passHref>
 					<Button
@@ -72,6 +71,9 @@ const Navbar = () => {
 						About
 					</Button>
 				</NextLink>
+			</Box>
+			<Box>
+				<SocialLinks />
 			</Box>
 		</Flex>
 	);

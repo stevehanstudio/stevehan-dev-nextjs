@@ -14,7 +14,7 @@ const Header = () => {
 				<DarkModeSwitch />
 			</Box>
 			<Text
-				fontSize='6xl'
+				fontSize='8xl'
 				fontWeight={300}
 				lineHeight={1}
 				mb={0}

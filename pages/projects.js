@@ -27,15 +27,14 @@ import { GrGithub } from 'react-icons/gr'
 import internetIcon from '../assets/internetIcon';
 import { useMediaQuery } from '@chakra-ui/media-query';
 import Layout from '../components/Layout';
+import Title from '../components/Title';
 
 export default function Project({ projects }) {
 	const [isNotSmallerScreen] = useMediaQuery();
 	const { colorMode } = useColorMode()
 	return (
 		<Layout>
-			<Heading as='h1' mb={4}>
-				Projects
-			</Heading>
+			<Title title='Projects' />
 			<SimpleGrid columns={{ sm: 2, md: 3, lg: 3, xl: 3 }} spacing='40px'>
 				{projects.reverse().map(project => (
 					<Container

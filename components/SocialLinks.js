@@ -47,7 +47,6 @@ export const resumeIcon = {
 	url: "/resume"
 }
 
-
 const SocialLinks = () => {
 	return (
 		<>

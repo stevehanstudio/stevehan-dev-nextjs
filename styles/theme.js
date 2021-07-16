@@ -16,9 +16,6 @@ export const customTheme = extendTheme({
 		body:  '"Roboto", sans-serif',
 		mono: '"Space Mono", monospace',
 	},
-	fontSizes: {
-		"6xl": "6rem"
-	},
 	components: {
 		Button,
     Box,

@@ -1,13 +1,13 @@
-import { VStack } from '@chakra-ui/react';
+import { VStack, Flex } from '@chakra-ui/react';
 import Header from './Header';
 import Footer from './Footer';
 
 export default function Layout({ children }) {
 	return (
-		<VStack>
+		<Flex direction='column' minH='100vh'>
 			<Header />
 			{children}
 			<Footer />
-		</VStack>
-	)
+		</Flex>
+	);
 }

@@ -52,7 +52,7 @@ const SocialLinks = () => {
 		<>
 			{socialLinks.map(socialLink => (
 				<Link key={socialLink.title} href={socialLink.url} isExternal>
-					<IconButton as={socialLink.icon} rounded='full' p={3} />
+					<IconButton as={socialLink.icon} rounded='full' mr={2} p={3} />
 				</Link>
 			))}
 			<NextLink href={resumeIcon.url}>

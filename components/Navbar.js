@@ -16,12 +16,12 @@ const Navbar = () => {
 		<Flex
 			flexDirection='row'
 			justifyContent='space-between'
-			maxWidth='800px'
+			// maxWidth='800px'
 			minWidth='356px'
 			width='100%'
 			as='nav'
 			px={4}
-			my={8}
+			my={12}
 			mx='auto'
 		>
 			<Box>

@@ -4,6 +4,7 @@ import { BoxStyles as Box } from './BoxStyles';
 import { ContainerStyles as Container } from './ContainerStyles';
 
 export const customTheme = extendTheme({
+
 	colors: {
 		primary: '#845EC2',
 		secondary: '#FF6F91',

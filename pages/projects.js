@@ -35,7 +35,11 @@ export default function Project({ projects }) {
 	return (
 		<Layout>
 			<Title title='Projects' />
-			<SimpleGrid columns={{ sm: 2, md: 3, lg: 3, xl: 3 }} spacing='40px'>
+			<SimpleGrid
+				columns={{ sm: 2, md: 3, lg: 3, xl: 3 }}
+				spacing='40px'
+				mb={8}
+			>
 				{projects.reverse().map(project => (
 					<Container
 						key={project.filePath}
@@ -61,15 +65,15 @@ export default function Project({ projects }) {
 								<Link>
 									<Heading
 										as='h2'
-										fontSize='1.8rem'
-										fontWeight={600}
+										fontSize='2xl'
+										fontWeight={400}
 										pb={4}
 									>
 										{project.data.title}
 									</Heading>
 								</Link>
 							</NextLink>
-							<Text>{project.data.subtitle}</Text>
+							<Text fontSize='md'>{project.data.subtitle}</Text>
 							<Flex my={4}>
 								<Button variant='primary' mr={4}>
 									Details

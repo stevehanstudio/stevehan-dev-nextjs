@@ -25,7 +25,7 @@ export const socialLinks = [
 		title: 'Linkedin',
 		//    icon: <FaLinkedin />,
 		icon: AiFillLinkedin,
-		url: 'https://linkedin.com/in/stevehanphoto',
+		url: 'https://linkedin.com/in/stevehanstudio',
 	},
 	{
 		title: 'Github',
@@ -55,8 +55,8 @@ const SocialLinks = () => {
 					<IconButton as={socialLink.icon} rounded='full' mr={2} p={3} />
 				</Link>
 			))}
-			<NextLink href={resumeIcon.url}>
-				<IconButton as={resumeIcon.icon} rounded='full' p={3} />
+			<NextLink href={resumeIcon.url} passHref>
+				<IconButton as={resumeIcon.icon} rounded='sm' ml={5} p={2} />
 			</NextLink>
 		</>
 	);

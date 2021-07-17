@@ -1,5 +1,5 @@
 import { ChakraProvider, ColorModeProvider, useColorMode } from "@chakra-ui/react"
-import {customTheme} from '../styles/theme'
+import { customTheme } from '../styles/theme'
 import { Global, css } from '@emotion/react'
 
 const GlobalStyle = ({ children }) => {

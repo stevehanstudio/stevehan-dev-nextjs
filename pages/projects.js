@@ -24,10 +24,12 @@ import {
 	useColorMode,
 } from '@chakra-ui/react';
 import { GrGithub } from 'react-icons/gr'
-import internetIcon from '../assets/internetIcon';
+import { InternetIcon } from '../assets/CustomIcons';
 import { useMediaQuery } from '@chakra-ui/media-query';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
+
+import {MdBuild, MdCall} from "react-icons/md"
 
 export default function Project({ projects }) {
 	const [isNotSmallerScreen] = useMediaQuery();
@@ -74,15 +76,33 @@ export default function Project({ projects }) {
 								</Link>
 							</NextLink>
 							<Text fontSize='md'>{project.data.subtitle}</Text>
-							<Flex my={4}>
-								<Button variant='primary' mr={4}>
-									Details
-								</Button>
-								<Link href={project.data.github} isExternal>
-									<IconButton as={GrGithub} rounded='full' p={3} />
+							<Flex my={4} justify='space-between'>
+								<Link
+									href={project.data.github}
+									isExternal
+									style={{ textDecoration: 'none' }}
+								>
+									<Button
+										leftIcon={<InternetIcon />}
+										// variantColor='blue'
+										colorScheme='blue'
+										variant='solid'
+									>
+										Demo
+									</Button>
 								</Link>
-								<Link href={project.data.website} isExternal>
-									<IconButton as={internetIcon} rounded='full' p={3} />
+								<Link
+									href={project.data.website}
+									isExternal
+									style={{ textDecoration: 'none' }}
+								>
+									<Button
+										leftIcon={<GrGithub />}
+										colorScheme='blue'
+										variant='outline'
+									>
+										Source Code
+									</Button>
 								</Link>
 							</Flex>
 							<Divider my={3} />

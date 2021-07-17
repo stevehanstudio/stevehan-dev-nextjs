@@ -5,7 +5,7 @@ import { AiFillHome, AiFillLinkedin } from 'react-icons/ai';
 import { FaInfoCircle } from 'react-icons/fa'
 import { GrGithub } from 'react-icons/gr';
 import { SiCodesandbox } from 'react-icons/si';
-import { ResumeIcon } from '../assets/resumeIcon'
+import { ResumeIcon } from '../assets/CustomIcons'
 
 export const navLinks = [
 	{

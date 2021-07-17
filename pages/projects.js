@@ -54,24 +54,28 @@ export default function Project({ projects }) {
 						p={0}
 						boxShadow={
 							colorMode === 'dark'
-								? '0px 0px 8px 4px rgba(256,256,256,0.4)'
+								? '0px 0px 10px 5px rgba(256,256,256,0.6)'
 								: '0px 0px 10px 5px rgba(0,0,0,0.1)'
 						}
 					>
-						<Image
-							width='100vw'
-							src={`${project.data.image}`}
-							alt={`${project.data.title} Cover`}
-						/>
+						<Link	href={project.data.website}	isExternal>
+							<Image
+								className='project-cover'
+								width='100vw'
+								src={`${project.data.image}`}
+								alt={`${project.data.title} Cover`}
+							/>
+						</Link>
 						<Box p={4}>
-							<NextLink
+							{/* <NextLink
 								as={`/projects/${project.filePath.replace(
 									/\.mdx?$/,
 									''
 								)}`}
 								href={`/projects/[slug]`}
-							>
-								<Link>
+								href={project.data.website}
+							> */}
+								<Link href={project.data.website} isExternal>
 									<Heading
 										as='h2'
 										fontSize='2xl'
@@ -81,11 +85,11 @@ export default function Project({ projects }) {
 										{project.data.title}
 									</Heading>
 								</Link>
-							</NextLink>
+							{/* </NextLink> */}
 							<Text fontSize='md'>{project.data.subtitle}</Text>
 							<Flex my={4} justify='space-between'>
 								<Link
-									href={project.data.github}
+									href={project.data.website}
 									isExternal
 									style={{ textDecoration: 'none' }}
 								>
@@ -94,12 +98,17 @@ export default function Project({ projects }) {
 										// variantColor='blue'
 										colorScheme='blue'
 										variant='solid'
+										boxShadow='sm'
+										_hover={{
+											transform: 'scale(1.02)',
+											boxShadow: 'md',
+										}}
 									>
 										Demo
 									</Button>
 								</Link>
 								<Link
-									href={project.data.website}
+									href={project.data.github}
 									isExternal
 									style={{ textDecoration: 'none' }}
 								>
@@ -107,6 +116,11 @@ export default function Project({ projects }) {
 										leftIcon={<GrGithub />}
 										colorScheme='blue'
 										variant='outline'
+										boxShadow='sm'
+										_hover={{
+											transform: 'scale(1.02)',
+											boxShadow: 'md',
+										}}
 									>
 										Source Code
 									</Button>

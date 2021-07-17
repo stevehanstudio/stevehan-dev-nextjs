@@ -37,6 +37,7 @@ const Header = () => {
 				finalFocusRef={mobileMenuRef}
 			/>
 			<Text
+				className="logo-title"
 				fontSize={['5xl', '7xl', '8xl', '8xl']}
 				fontWeight={300}
 				lineHeight={1}

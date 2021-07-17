@@ -21,9 +21,9 @@ const GlobalStyle = ({ children }) => {
 						display: flex;
 						flex-direction: column;
 						min-height: 100vh;
-						background-color: ${colorMode === 'light'
-							? 'white'
-							: '#171717'};
+						background: ${colorMode === 'light'
+							? 'linear-gradient(to right, #eff3ff, white)'
+							: 'linear-gradient(to right, #001328, #102340)'};
 						color: ${colorMode === 'light' ? 'black' : 'white'};
 					}
 				`}

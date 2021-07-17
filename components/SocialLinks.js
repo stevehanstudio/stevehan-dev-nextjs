@@ -1,6 +1,6 @@
 import React from "react"
 import NextLink from 'next/link';
-import {Button, IconButton, Link, Tooltip} from '@chakra-ui/react'
+import { Button, Box, IconButton, Link, Tooltip } from '@chakra-ui/react'
 import { AiFillHome, AiFillLinkedin } from 'react-icons/ai';
 import { FaInfoCircle } from 'react-icons/fa'
 import { GrGithub } from 'react-icons/gr';
@@ -23,27 +23,24 @@ export const navLinks = [
 export const socialLinks = [
 	{
 		title: 'Linkedin',
-		//    icon: <FaLinkedin />,
-		icon: AiFillLinkedin,
+		icon: <AiFillLinkedin />,
 		url: 'https://linkedin.com/in/stevehanstudio',
 	},
 	{
 		title: 'Github',
-		//icon: <FaGithubSquare />,
-		icon: GrGithub,
+		icon: <GrGithub />,
 		url: 'https://github.com/stevehanstudio',
 	},
 	{
 		title: 'Codesandbox',
-		//icon: <FaGithubSquare />,
-		icon: SiCodesandbox,
+		icon: <SiCodesandbox />,
 		url: 'https://codesandbox.com/stevehanstudio',
 	}
 ]
 
 export const resumeIcon = {
 	title: "Resume",
-	icon: ResumeIcon,
+	icon: <ResumeIcon width='24' height='24'/>,
 	url: "/resume"
 }
 
@@ -55,35 +52,36 @@ const SocialLinks = () => {
 					hasArrow
 					key={socialLink.title}
 					placement='bottom-end'
-					label={socialLink.title}
+					arrowSize={10}
+					arrowPadding={12}
+					offset={[-12, 20]}
+					label={`${socialLink.title} profile`}
 				>
 					<Link href={socialLink.url} isExternal>
-						<IconButton
-							as={socialLink.icon}
-							rounded='full'
-							mr={2}
-							p={3}
-						/>
+						<Button rounded='full' mr={2} p={3}>
+							{socialLink.icon}
+						</Button>
 					</Link>
 				</Tooltip>
 			))}
 			<Tooltip
 				hasArrow
 				placement='bottom-start'
+				arrowSize={10}
 				arrowPadding={16}
-				arrowSize={16}
-				offset={8}
-				label={resumeIcon.title}
+				offset={[6, 20]}
+				label={`Open ${resumeIcon.title}`}
+				ml={5}
 			>
-				<NextLink href={resumeIcon.url} passHref>
-					<IconButton as={resumeIcon.icon} rounded='sm' ml={5} p={2} />
-				</NextLink>
+				<Link href={resumeIcon.url}>
+					<Button rounded='full' ml={5} p={3}>
+						{resumeIcon.icon}
+					</Button>
+				</Link>
 			</Tooltip>
 		</>
 	);
 }
-{/* <Tooltip hasArrow label='Search places' bg='gray.300' color='black'>
-	<SearchIcon />
-</Tooltip>; */}
+
 export default SocialLinks
 

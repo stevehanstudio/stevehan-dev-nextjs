@@ -7,6 +7,7 @@ import {
 	Divider,
 	Button,
 	IconButton,
+	useColorMode,
 	useDisclosure,
 	useMediaQuery
 } from '@chakra-ui/react'
@@ -16,6 +17,7 @@ import DarkModeSwitch from './DarkModeSwitch';
 import MobileMenu from './MobileMenu'
 
 const Header = () => {
+	const { colorMode } = useColorMode()
 	const [isMobile] = useMediaQuery("(max-width: 600px)")
 	const mobileMenuRef = useRef()
 	const { isOpen, onOpen, onClose } =	useDisclosure();
@@ -73,9 +75,13 @@ const Header = () => {
 						<Tooltip
 							hasArrow
 							placement='bottom-start'
-							label='Light/Dark Mode Switch'
+							arrowSize={10}
+							offset={[0, 18]}
+							label={`Switch to ${colorMode === 'dark' ? 'light' : 'dark'} mode`}
 						>
-							<DarkModeSwitch />
+							<span>
+								<DarkModeSwitch />
+							</span>
 						</Tooltip>
 					</Box>
 					<Navbar />

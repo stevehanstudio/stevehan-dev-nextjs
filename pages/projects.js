@@ -39,17 +39,24 @@ export default function Project({ projects }) {
 			<Title title='Projects' />
 			<SimpleGrid
 				columns={{ sm: 2, md: 3, lg: 3, xl: 3 }}
-				spacing='40px'
+				spacing={8}
 				mb={8}
 			>
 				{projects.reverse().map(project => (
 					<Container
 						key={project.filePath}
-						variant='projectCard'
+						// variant='projectCard'
+						mx='auto'
+						maxW='400px'
 						minW='250px'
-						rounded={6}
+						rounded={3}
 						overflow='hidden'
 						p={0}
+						boxShadow={
+							colorMode === 'dark'
+								? '0px 0px 8px 4px rgba(256,256,256,0.4)'
+								: '0px 0px 10px 5px rgba(0,0,0,0.1)'
+						}
 					>
 						<Image
 							width='100vw'

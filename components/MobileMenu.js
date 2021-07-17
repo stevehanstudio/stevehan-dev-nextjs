@@ -62,7 +62,7 @@ const MobileMenu = ({ isOpen, onClose, finalFocusRef }) => {
 								<Stack key={socialLink.title}>
 									<NextLink href={socialLink.url}>
 										<Stack isInline>
-											<Icon as={socialLink.icon} />
+											{socialLink.icon}
 											<Text>{socialLink.title}</Text>
 										</Stack>
 									</NextLink>

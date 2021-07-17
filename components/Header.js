@@ -4,19 +4,19 @@ import {
   VStack,
   Text,
 	Tooltip,
-	Divider
+	Divider,
+	IconButton,
+	useMediaQuery
 } from '@chakra-ui/react'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import Navbar from './Navbar';
 import DarkModeSwitch from './DarkModeSwitch';
 
 const Header = () => {
+	const [isMobile] = useMediaQuery("(max-width: 600px)")
+
   return (
 		<VStack>
-			<Box pos='absolute' top='0.7rem' right='0.8rem'>
-			  <Tooltip hasArrow placement='bottom-start' label='Light/Dark Mode Switch'>
-					<DarkModeSwitch />
-				</Tooltip>
-			</Box>
 			<Text
 				fontSize='8xl'
 				fontWeight={300}
@@ -37,7 +37,28 @@ const Header = () => {
 			>
 				Frontend Focused Full Stack Web Developer
 			</Text>
-			<Navbar />
+			{isMobile ? (
+				<IconButton
+					as={GiHamburgerMenu}
+					pos='absolute'
+					top='0.7rem'
+					right='0.8rem'
+					variant='ghost'
+				/>
+			) : (
+				<>
+				<Box pos='absolute' top='0.7rem' right='0.8rem'>
+					<Tooltip
+						hasArrow
+						placement='bottom-start'
+						label='Light/Dark Mode Switch'
+					>
+						<DarkModeSwitch />
+					</Tooltip>
+				</Box>
+				<Navbar />
+				</>
+			)}
 			<Divider />
 		</VStack>
   );

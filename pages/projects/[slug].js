@@ -8,7 +8,7 @@ import { projectFilePaths, PROJECTS_PATH } from '../../lib/mdxUtils';
 import { useMediaQuery } from '@chakra-ui/media-query'
 import { Flex, Box, Heading, Text, Image, Link, Divider } from '@chakra-ui/react';
 import Layout from '../../components/Layout';
-import ProjectSeo from '../../components/ProjectSEO';
+// import ProjectSeo from '../../components/ProjectSEO';
 import { useRouter } from 'next/router';
 
 const CustomA = props => <Link color='blue.500' {...props} />;
@@ -25,10 +25,10 @@ export default function ProjectPage({ source, frontMatter }) {
 
 	return (
 		<>
-			<ProjectSeo
+			{/* <ProjectSeo
 				url={`https://localhost:3000/projects${slug}`}
 				{...frontMatter}
-			/>
+			/> */}
 			<Layout>
 				<Flex flexDir={isNotSmallerScreen ? 'row' : 'column'}>
 					<Box>

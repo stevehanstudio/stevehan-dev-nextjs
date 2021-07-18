@@ -1,15 +1,15 @@
 import Layout from '../components/Layout';
 import { Heading, Text, Button } from '@chakra-ui/react';
-import { NextSeo } from 'next-seo';
+// import { NextSeo } from 'next-seo';
 
-const url = 'https://example.io/';
+const url = 'https://www.stevehan.dev/';
 const title = 'Home';
-const description = 'Awesome description.';
+const description = 'Steve Han Developer Portfolio';
 
 export default function Home() {
 	return (
 		<>
-			<NextSeo
+			{/* <NextSeo
 				title={title}
 				description={description}
 				canonical={url}
@@ -18,7 +18,7 @@ export default function Home() {
 					title,
 					description,
 				}}
-			/>
+			/> */}
 			<Layout>
 				<Heading as='h1' size='3xl'>
 					Hello, I am Steve Han

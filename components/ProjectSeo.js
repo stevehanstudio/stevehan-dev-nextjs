@@ -3,7 +3,7 @@ import { format } from '../lib/dateUtils'
 
 const ProjectSeo = ({ title, subtitle, d, image }) => {
 	const date = format(d);
-	const url = `http://localhost:3000`
+	const url = 'https://stevehan.dev'
 	const featuredImage = {
 		url: `./${image}`,
 		alt: title,
@@ -32,7 +32,7 @@ const ProjectSeo = ({ title, subtitle, d, image }) => {
 				datePublished={date}
 				description={subtitle}
 				images={[featuredImage]}
-				publisherLogo='/static/favicons/android-chrome-192x192.png'
+				publisherLogo='/static/favicons/icon-192x192.png'
 				publisherName='Steve Han'
 				title={title}
 				// url={url}

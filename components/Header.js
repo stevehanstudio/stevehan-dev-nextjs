@@ -18,17 +18,10 @@ import MobileMenu from './MobileMenu'
 
 const Header = () => {
 	const { colorMode } = useColorMode()
-	const [isMobile] = useMediaQuery("(max-width: 600px)")
+	const [isMobile] = useMediaQuery("(max-width: 1024px)")
 	const mobileMenuRef = useRef()
 	const { isOpen, onOpen, onClose } =	useDisclosure();
 
-	// console.log(
-	// 	'mobileMenuRef',
-	// 	mobileMenuRef,
-	// 	isMobileMenuOpen,
-	// 	onMobileMenuOpen,
-	// 	onMobileMenuClose
-	// );
 	return (
 		<VStack>
 			<MobileMenu

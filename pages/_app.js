@@ -1,6 +1,8 @@
 import { ChakraProvider, ColorModeProvider, useColorMode } from "@chakra-ui/react"
 import { customTheme } from '../styles/theme'
 import { Global, css } from '@emotion/react'
+import SEO from '../next-seo.config'
+import { DefaultSeo } from 'next-seo'
 
 const GlobalStyle = ({ children }) => {
 	const { colorMode } = useColorMode()
@@ -16,6 +18,7 @@ const GlobalStyle = ({ children }) => {
 						min-height: 100%;
 						display: flex;
 						flex-direction: column;
+						width: 100vw;
 					}
 					#__next {
 						display: flex;
@@ -25,10 +28,12 @@ const GlobalStyle = ({ children }) => {
 							? 'linear-gradient(to right, #eff3ff, white)'
 							: 'linear-gradient(to right, #001328, #102340)'};
 						color: ${colorMode === 'light'
-							? 'rgba(0, 0, 0, 0.75)'
-							: 'rgba(255, 255, 255, 0.75)'};
+							? 'rgba(0, 0, 0, 0.8)'
+							: 'rgba(255, 255, 255, 0.6)'};
 						h1 {
-							color: ${colorMode === 'light' ? 'black' : 'white'};
+							color: ${colorMode === 'light'
+								? 'rgba(0, 0, 0, 0.85)'
+								: 'rgba(255, 255, 255, 0.85)'};
 						}
 						.logo-title {
 							color: ${colorMode === 'light' ? 'black' : 'white'};
@@ -36,8 +41,8 @@ const GlobalStyle = ({ children }) => {
 						a {
 							text-decoration: none;
 							color: ${colorMode === 'light'
-								? 'rgba(0, 0, 0, 0.75)'
-								: 'rgba(255, 255, 255, 0.75)'};
+								? 'rgba(0, 0, 0, 0.7)'
+								: 'rgba(255, 255, 255, 0.7)'};
 							&:hover,
 							&:focus,
 							&:active {
@@ -45,25 +50,19 @@ const GlobalStyle = ({ children }) => {
 							}
 						}
 						.project-cover {
-							opacity: 0.8;
+							opacity: 0.7;
 							&:hover {
 								opacity: 1;
 							}
 						}
 					}
-					/* .css-171yf7w a {
-						color: ${colorMode === 'light'
-						? 'rgba(0, 0, 0, 0.1)'
-						: 'rgba(255, 255, 255, 0.1)'};
-						&:hover {
-							color: ${colorMode === 'light' ? 'black' : 'white'};
-						}
-					} */
 					.chakra-portal {
 						color: ${colorMode === 'light'
-							? 'rgba(0, 0, 0, 0.8)'
-							: 'rgba(255, 255, 255, 0.8)'};
-						&:hover {
+							? 'rgba(0, 0, 0, 0.7)'
+							: 'rgba(255, 255, 255, 0.7)'};
+						&:hover,
+						&:focus,
+						&:active {
 							color: ${colorMode === 'light' ? 'black' : 'white'};
 						}
 					}
@@ -84,6 +83,7 @@ function MyApp({ Component, pageProps }) {
 				}}
 			>
 				<GlobalStyle>
+					<DefaultSeo {...SEO} />
 					<Component {...pageProps} />
 				</GlobalStyle>
 			</ColorModeProvider>
